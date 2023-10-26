@@ -8,9 +8,9 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(6.0),
+    return  const SafeArea(
       child: Column(
+        
         children: [
          NotesViewBody(),
          

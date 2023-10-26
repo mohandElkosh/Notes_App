@@ -7,15 +7,30 @@ class NotesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Material(
+    return   const Material(
+      
       child: Column(children: [
-         
         CustomAppBar(),
-        SizedBox(),
-        NoteItem(),
-       
+        SizedBox(height: 647, child: NotesListView()),
         
       ]),
     );
+  }
+}
+
+
+class NotesListView extends StatelessWidget {
+  const NotesListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemBuilder: (context,index){
+      return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 5),
+        child: NoteItem(),
+      );
+    });
   }
 }
