@@ -3,7 +3,7 @@ import 'package:notes_app/Widgets/custom_searchicon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return const Padding(
