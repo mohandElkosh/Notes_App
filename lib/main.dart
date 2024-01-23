@@ -2,10 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app/firebase_options.dart';
 import 'package:notes_app/views/notes_view.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
-
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -18,14 +19,11 @@ class NotesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.dark,),
-      home:   NotesView(),
-      
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home: NotesView(),
     );
-      
-
-
   }
 }
